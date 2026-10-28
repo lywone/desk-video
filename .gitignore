@@ -1,0 +1,13 @@
+node_modules/
+out/
+dist/
+release/
+*.log
+.DS_Store
+
+# 运行时 / 调试目录
+.runtime/
+.screenshots/
+.userdata-smoke/
+.trae-html-share-packages/
+out-video/

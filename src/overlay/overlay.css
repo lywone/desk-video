@@ -1,0 +1,7 @@
+/* Overlay 是全屏透明窗：必须抵消 base.css 的深色 body 背景，否则整屏黑幕。
+   打包后 CSS 分包可能把 base.css 排到本文件之后，故用 !important 保证与顺序无关。 */
+html,
+body,
+#app {
+  background: transparent !important;
+}

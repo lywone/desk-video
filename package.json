@@ -1,0 +1,58 @@
+{
+  "name": "desk-video",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desk-Video 桌面讲解录制工具",
+  "author": "Desk-Video",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "start": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder --win"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^33.2.0",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  },
+  "build": {
+    "appId": "com.deskvideo.app",
+    "productName": "Desk-Video",
+    "directories": {
+      "output": "release",
+      "buildResources": "resources"
+    },
+    "files": [
+      "out/**",
+      "resources/icon.png",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/node_modules/ffmpeg-static/**"
+    ],
+    "compression": "normal",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "Desk-Video-Setup-${version}.${ext}",
+      "shortcutName": "Desk-Video"
+    }
+  }
+}
